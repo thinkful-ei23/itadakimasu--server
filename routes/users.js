@@ -1,10 +1,10 @@
 'use strict';
 
 const express = require('express');
-const User = require('./models/user');
+const User = require('../models/user');
 const Router = express.Router();
 
-Router.post('/', (res, req, next) => {
+Router.post('/', (req, res, next) => {
   const { firstName, lastName, username, password } = req.body;
 
   const requiredFields = ['username', 'password'];
@@ -39,7 +39,7 @@ Router.post('/', (res, req, next) => {
       min: 1
     },
     password: {
-      min: 8,
+      min: 10,
       max: 72
     }
   };
@@ -61,7 +61,7 @@ Router.post('/', (res, req, next) => {
     }
   }
 
-  let first;
+  let first = req.body;
   let last;
 
   if (firstName) {
