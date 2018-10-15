@@ -3,10 +3,13 @@
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
+const passport = require('passport');
+const localStrategy = require('./passport/local');
 
 const { PORT, CLIENT_ORIGIN } = require('./config');
 const { dbConnect } = require('./db-mongoose');
 // const {dbConnect} = require('./db-knex');
+const usersRouter = require('./routes/users');
 
 const app = express();
 
@@ -21,6 +24,13 @@ app.use(
     origin: CLIENT_ORIGIN
   })
 );
+
+//Body parser
+app.use(express.json());
+
+passport.use(localStrategy);
+
+app.use('/api/users', usersRouter);
 
 function runServer(port = PORT) {
   const server = app
