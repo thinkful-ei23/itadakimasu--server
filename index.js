@@ -34,10 +34,8 @@ passport.use(jwtStrategy);
 //Body parser
 app.use(express.json());
 
-
 app.use('/api/auth', authRouter);
 app.use('/api/users', usersRouter);
-
 
 app.use((req, res, next) => {
   const err = new Error('Not Found');
