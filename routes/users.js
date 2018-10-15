@@ -4,7 +4,8 @@ const express = require('express');
 const User = require('../models/user');
 const Router = express.Router();
 
-Router.post('/', (res, req, next) => {
+Router.post('/', (req, res, next) => {
+  console.log(req.body);
   const { firstName, lastName, username, password } = req.body;
 
   const requiredFields = ['username', 'password'];
