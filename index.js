@@ -8,10 +8,10 @@ const passport = require('passport');
 const { PORT, CLIENT_ORIGIN } = require('./config');
 const { dbConnect } = require('./db-mongoose');
 // const {dbConnect} = require('./db-knex');
-const authRouter = require('./routes/auth');
-
 const localStrategy = require('./passport/local');
 const jwtStrategy = require('./passport/jwt');
+
+const authRouter = require('./routes/auth');
 const usersRouter = require('./routes/users');
 
 const app = express();
