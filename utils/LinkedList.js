@@ -165,16 +165,17 @@ class LinkedList {
   }
 }
 
-function createLinkedList() {
-  // this only creates the new LinkedList from scratch, does not grab the local question data per user
-  const questionLinkedList = new LinkedList();
-  for (let i = 0; i < seedQuestions.length; i++) {
-    questionLinkedList.insertFirst(seedQuestions[i]);
-  }
-  return questionLinkedList;
-}
+// function createLinkedList() {
+//   // this only creates the new LinkedList from scratch, does not grab the local question data per user
+//   const questionLinkedList = new LinkedList();
+//   for (let i = 0; i < seedQuestions.length; i++) {
+//     questionLinkedList.insertFirst(seedQuestions[i]);
+//   }
+//   return questionLinkedList;
+// }
 
-const questionLinkedList = createLinkedList();
-console.log(questionLinkedList);
+// const questionLinkedList = createLinkedList();
+// console.log(questionLinkedList);
 
-module.exports = questionLinkedList;
+// module.exports = questionLinkedList;
+module.exports = LinkedList;
