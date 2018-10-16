@@ -122,7 +122,7 @@ class LinkedList {
   }
 
   peek() {
-    return this.head;
+    return this.head.value;
   }
 
   // O(1)
