@@ -4,21 +4,21 @@ const router = express.Router();
 const linkedList = require('../utils/LinkedList');
 
 router.get('/', (req, res, next) => {
-  // returns the first LinkedList quesiton
-  const itemToReturn = linkedList.peek();
+  // returns the first LinkedList question
+  const itemToReturn = linkedList.peek().value;
   // for now the get endpoint is deleting the item
+  // this needs to happen after we have posted tomorrow
   linkedList.deleteFirst();
-  console.log(itemToReturn.value);
-  res.json(itemToReturn.value);
+  res.json(itemToReturn);
 });
 
-function deleteFirstItem () {
-
-}
-
-router.post('/question', (req, res, next) => {
+router.post('/', (req, res, next) => {
+  // not finished, need to have an M value
+  const questionToPost = req.body.question;
+  // linkedList.deleteFirst();
+  linkedList.insertLast(questionToPost);
   // posts the next one
-  // 
+  res.send('posted');
 });
 
 
