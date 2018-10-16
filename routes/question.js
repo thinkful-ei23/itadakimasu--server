@@ -6,9 +6,11 @@ const linkedList = require('../utils/LinkedList');
 router.get('/', (req, res, next) => {
   // returns the first LinkedList question
   const itemToReturn = linkedList.peek();
+  console.log(linkedList);
   // for now the get endpoint is deleting the item
   // this needs to change to the post endpoint
   linkedList.deleteFirst();
+  linkedList.insertLast(itemToReturn);
   res.json(itemToReturn);
 });
 
