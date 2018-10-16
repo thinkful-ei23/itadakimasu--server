@@ -3,6 +3,7 @@
 const express = require('express');
 const User = require('../models/user');
 const Router = express.Router();
+const seedQuestions = require('../db/seed/questions');
 
 Router.post('/', (req, res, next) => {
   const { firstName, lastName, username, password } = req.body;
@@ -73,6 +74,7 @@ Router.post('/', (req, res, next) => {
   if (lastName) {
     last = lastName.trim();
   }
+  console.log(seedQuestions);
 
   return User.hashPassword(password)
     .then(digest => {
@@ -80,7 +82,8 @@ Router.post('/', (req, res, next) => {
         firstName: first,
         lastName: last,
         username,
-        password: digest
+        password: digest,
+        questions: seedQuestions
       };
       return User.create(newUser);
     })

@@ -2,51 +2,61 @@
   {
     "imageURL" : "/img/tempura.jpg",
     "question" : "天ぷら",
-    "answer" : "tempura"
+    "answer" : "tempura",
+    "M" : 1
   },
   {
     "imageURL" : "/img/okonomiyaki.jpg",
     "question" : "お好み焼き",
-    "answer" : "okonomiyaki"
+    "answer" : "okonomiyaki",
+    "M" : 1
   },
   {
     "imageURL" : "/img/sashimi.jpg",
     "question" : "刺身",
-    "answer" : "sashimi"
+    "answer" : "sashimi",
+    "M" : 1
   },
   {
       "imageURL": "/img/mochi.jpg",
       "question": "餅",
-      "answer": "mochi"
+      "answer": "mochi",
+      "M" : 1
   },
   {
       "imageURL": "/img/ramen.jpg",
       "question": "ラーメン",
-      "answer": "ramen"
+      "answer": "ramen",
+      "M" : 1
   },
   {
       "imageURL": "/img/udon.jpg",
       "question": "うどん",
-      "answer": "udon"
+      "answer": "udon",
+      "M" : 1
   },
   {
     "imageURL": "/img/natto.jpg",
     "question": "納豆",
-    "answer": "natto"
+    "answer": "natto",
+    "M" : 1
   },
   {
     "imageURL": "/img/soba.jpg",
     "question": "そば",
-    "answer": "soba"
+    "answer": "soba",
+    "M" : 1
   },
   {
     "imageURL": "/img/edamame.jpg",
     "question": "枝豆",
-    "answer": "edamame"
+    "answer": "edamame",
+    "M" : 1
   },
   {
     "imageURL": "/img/takoyaki.jpg",
     "question": "タコヤキ",
-    "answer": "takoyaki"
+    "answer": "takoyaki",
+    "M" : 1
   }
 ]

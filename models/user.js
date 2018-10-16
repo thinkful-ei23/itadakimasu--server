@@ -6,7 +6,8 @@ const userSchema = new mongoose.Schema({
   firstName: String,
   lastName: String,
   username: {type: String, required: true},
-  password: {type: String, required: true}
+  password: {type: String, required: true},
+  questions: [{imageURL: String, question: String, answer: String, M: Number}]
 });
 
 userSchema.set('toObject', {

@@ -4,7 +4,8 @@ const mongoose = require('mongoose');
 const questionSchema = new mongoose.Schema({
   imageURL: String,
   question: String,
-  answer: String
+  answer: String,
+  M : Number
 });
 
 questionSchema.set('toObject', {
