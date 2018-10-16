@@ -73,6 +73,7 @@ class LinkedList {
         previousNode = tempNode; 
         tempNode = tempNode.next; 
       }
+      console.log(previousNode);
       previousNode.next = new _Node(value, tempNode);
     }
   }
