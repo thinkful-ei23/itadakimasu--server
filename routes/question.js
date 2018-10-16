@@ -4,6 +4,12 @@ const router = express.Router();
 const linkedList = require('../utils/LinkedList');
 
 router.get('/', (req, res, next) => {
+  // i need to know the user id
+  // grab the array from their data
+  // change that into a linkedlist?
+  // show them the first item
+
+
   // returns the first LinkedList question
   const itemToReturn = linkedList.peek();
   console.log(linkedList);
