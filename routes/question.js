@@ -7,7 +7,7 @@ router.get('/', (req, res, next) => {
   // returns the first LinkedList question
   const itemToReturn = linkedList.peek().value;
   // for now the get endpoint is deleting the item
-  // this needs to happen after we have posted tomorrow
+  // this needs to change to the post endpoint
   linkedList.deleteFirst();
   res.json(itemToReturn);
 });
