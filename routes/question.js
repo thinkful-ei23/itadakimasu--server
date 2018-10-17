@@ -1,23 +1,30 @@
 'use strict';
 const express = require('express');
+const passport = require('passport');
 const router = express.Router();
-const linkedList = require('../utils/LinkedList');
+const User = require('../models/user');
+// const linkedList = require('../utils/LinkedList');
+
+router.use('/', passport.authenticate('jwt', { session: false, failWithError: true}));
 
 router.get('/', (req, res, next) => {
   // i need to know the user id
-  // grab the array from their data
-  // change that into a linkedlist?
-  // show them the first item
-
-
-  // returns the first LinkedList question
-  const itemToReturn = linkedList.peek();
-  console.log(linkedList);
-  // for now the get endpoint is deleting the item
-  // this needs to change to the post endpoint
-  linkedList.deleteFirst();
-  linkedList.insertLast(itemToReturn);
-  res.json(itemToReturn);
+  const userId = req.user.id;
+  
+  return User.findOne({_id: userId})
+    .then(user => {
+      if (user) {
+        const question = user.questions[user.head];
+        console.log(question);
+        res.json(question);
+      }
+      else {
+        next();
+      }
+    })
+    .catch(err => {
+      next(err);
+    });
 });
 
 router.post('/', (req, res, next) => {
