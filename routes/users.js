@@ -2,7 +2,9 @@
 
 const express = require('express');
 const User = require('../models/user');
+const LinkedList = require('../utils/LinkedList');
 const Router = express.Router();
+const seedQuestions = require('../db/seed/questions');
 
 Router.post('/', (req, res, next) => {
   const { firstName, lastName, username, password } = req.body;
@@ -73,18 +75,20 @@ Router.post('/', (req, res, next) => {
   if (lastName) {
     last = lastName.trim();
   }
-
+  const questions = seedQuestions;
   return User.hashPassword(password)
     .then(digest => {
       const newUser = {
         firstName: first,
         lastName: last,
         username,
-        password: digest
+        password: digest,
+        questions
       };
       return User.create(newUser);
     })
     .then(user => {
+      console.log(user);
       return res.status(201).location(`/api/users/${user.id}`).json(user);
     })
     .catch(err => {
