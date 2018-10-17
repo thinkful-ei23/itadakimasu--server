@@ -8,8 +8,19 @@ const userSchema = new mongoose.Schema({
   username: {type: String, required: true},
   password: {type: String, required: true},
   // questions: [{imageURL: String, question: String, answer: String, M: Number}]
-  questions: {
-    head: { type: Object }
+  questions: [
+    {
+      _id: mongoose.Schema.Types.ObjectId,
+      imageUrl: String,
+      question: String,
+      answer: String,
+      memoryStrength: Number,
+      next: Number
+    }
+  ],
+  head: {
+    type: Number,
+    default: 0
   }
 });
 
