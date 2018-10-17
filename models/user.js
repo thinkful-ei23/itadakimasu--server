@@ -14,7 +14,7 @@ const userSchema = new mongoose.Schema({
       imageUrl: String,
       question: String,
       answer: String,
-      memoryStrength: Number,
+      memoryStr: Number,
       next: Number
     }
   ],
