@@ -6,7 +6,21 @@ const userSchema = new mongoose.Schema({
   firstName: String,
   lastName: String,
   username: {type: String, required: true},
-  password: {type: String, required: true}
+  password: {type: String, required: true},
+  questions: [
+    {
+      _id: mongoose.Schema.Types.ObjectId,
+      imageUrl: String,
+      question: String,
+      answer: String,
+      memoryStr: Number,
+      next: Number
+    }
+  ],
+  head: {
+    type: Number,
+    default: 0
+  }
 });
 
 userSchema.set('toObject', {
