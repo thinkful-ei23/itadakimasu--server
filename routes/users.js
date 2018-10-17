@@ -76,8 +76,6 @@ Router.post('/', (req, res, next) => {
     last = lastName.trim();
   }
   const questions = seedQuestions;
-  console.log(questions);
-
   return User.hashPassword(password)
     .then(digest => {
       const newUser = {
@@ -90,6 +88,7 @@ Router.post('/', (req, res, next) => {
       return User.create(newUser);
     })
     .then(user => {
+      console.log(user);
       return res.status(201).location(`/api/users/${user.id}`).json(user);
     })
     .catch(err => {

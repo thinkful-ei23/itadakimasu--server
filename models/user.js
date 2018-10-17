@@ -7,7 +7,6 @@ const userSchema = new mongoose.Schema({
   lastName: String,
   username: {type: String, required: true},
   password: {type: String, required: true},
-  // questions: [{imageURL: String, question: String, answer: String, M: Number}]
   questions: [
     {
       _id: mongoose.Schema.Types.ObjectId,

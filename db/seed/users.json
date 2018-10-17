@@ -86,7 +86,8 @@
           "memoryStr" : 1,
           "next": null
         }
-      ]
+      ],
+      "head" : 0
     },
     {
       "firstName": "Jane",
