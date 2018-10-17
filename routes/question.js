@@ -29,7 +29,7 @@ router.post('/', jwtAuth, (req, res, next) => {
   const answeredQuestion = req.body; // save the node that you just answered
   console.log('here is answeredQuestion', answeredQuestion);
   const mToMove = answeredQuestion.memoryStr; // needs to change based on front end 
-  const oldAnsweredQuestionNext = answeredQuestion.next;
+  const newHead = answeredQuestion.next;
   const userId = req.user.id;
 
   // for testing purposes
@@ -42,102 +42,103 @@ router.post('/', jwtAuth, (req, res, next) => {
   
   User.findOne({_id: userId}) 
     .then(user => {
-      const currentHead = user.questions[user.head]; //save the value of the current head
+      const newQuestionsArr = user.questions;
+      newQuestionsArr[user.head] = answeredQuestion;
+      const currentHead = newQuestionsArr[user.head]; //save the value of the current head
       const currentHeadIndex = user.head;  //save the value of the current head's index
 
       let currentNode = currentHead;
 
-      for (let i = currentHeadIndex; i < mToMove; i++) {
-        currentNode = user.questions[currentNode.next];
+      for (let i = currentHeadIndex; i < currentHeadIndex + mToMove; i++) {
+        currentNode = newQuestionsArr[currentNode.next];
       }
-      console.log('list of user questions', user.questions);
       console.log(currentNode, 'currentNode after loop');
       // 0 1 2 3 4 5
       // new head is 1
       // index (currentNodeIndex)'s next should point to answeredNode's index
       // index (answeredNode'sIndex) should point to the old currentNodeIndex's next 
-      const newAnsweredNodeNext = currentNode.next; 
-      console.log('newAnweredNodeNext', newAnsweredNodeNext);
+      const answeredNext = currentNode.next; 
+      console.log('answeredNext: ', answeredNext);
       currentNode.next = currentHeadIndex; // set the current node's next to the answer node's index
       console.log('currentNode.next', currentNode.next);
-      answeredQuestion.next = newAnsweredNodeNext; // set the answer node's next to prior value of the current node's next
-      console.log('answeredQuestion.next', answeredQuestion.next);
+      currentHead.next = answeredNext; // set the answer node's next to prior value of the current node's next
+      console.log('currentHead.next', currentHead.next);
 
+      console.log('New questions list: ', newQuestionsArr);
 
-      //change the current head to whoever answered node's next 
-      const newHead = oldAnsweredQuestionNext;
-
-      console.log('newHead',newHead);
+      console.log('newHead', newHead);
       //find the insertion point
       // change the head of the user
-      User.findByIdAndUpdate(user._id, {$set: {'head': newHead}}, {new : true})
-        .then(result => {
-          if (result) {
-            console.log('changing head: should be 1', result);
-            // res.json(result);
-          } else {
-            next();
-          }
-        })
-        .catch(err => {
-          if (err.code === 11000) {
-            err = new Error('You already have a folder with that name');
-            err.status = 400;
-          }
-          next(err);
-        });
-
-      User.findOneAndUpdate({ _id: user._id, 'questions.next': newAnsweredNodeNext },{ $set: { 'questions.$.next' : currentHeadIndex } }, {new : true})
-        .then(result => {
-          if (result) {
-            console.log('changing currentNode: should be pointing to 0', result);
-            // res.json(result);
-          } else {
-            next();
-          }
-        })
-        .catch(err => {
-          if (err.code === 11000) {
-            err = new Error('You already have a folder with that name');
-            err.status = 400;
-          }
-          next(err);
-        });
-
-      // need to change the answeredNode's next to equal
-      console.log('searchning for the index that equals', oldAnsweredQuestionNext);
-      User.findOneAndUpdate({ _id: user._id, 'questions.next': oldAnsweredQuestionNext }, { $set: { 'questions.$.next' : answeredQuestion.next } }, {new : true})
-        .then(result => { 
-          if (result) {
-            console.log('changing answeredNode: should be pointing to 4', result);
-            // res.json(result);
-          } else {
-            next();
-          }
-        })
-        .catch(err => {
-          if (err.code === 11000) {
-            err = new Error('You already have a folder with that name');
-            err.status = 400;
-          }
-          next(err);
-        });
-
+      return User.findOneAndUpdate({_id: userId}, {$set: {'head': newHead, 'questions': newQuestionsArr}}, {new : true});
+    })
+    .then(result => {
+      if (result) {
+        console.log('New user head: ', result.head);
+        console.log('New user questions arr: ', result.questions);
+        res.json(result);
+      } else {
+        next();
+      }
     })
     .catch(err => {
+      if (err.code === 11000) {
+        err = new Error('You already have a folder with that name');
+        err.status = 400;
+      }
       next(err);
     });
+
+  //   User.findOneAndUpdate({ _id: user._id, 'questions.next': newAnsweredNodeNext },{ $set: { 'questions.$.next' : currentHeadIndex } }, {new : true})
+  //     .then(result => {
+  //       if (result) {
+  //         console.log('changing currentNode: should be pointing to 0', result);
+  //         // res.json(result);
+  //       } else {
+  //         next();
+  //       }
+  //     })
+  //     .catch(err => {
+  //       if (err.code === 11000) {
+  //         err = new Error('You already have a folder with that name');
+  //         err.status = 400;
+  //       }
+  //       next(err);
+  //     });
+
+  //   // need to change the answeredNode's next to equal
+  //   console.log('searchning for the index that equals', oldAnsweredQuestionNext);
+  //   User.findOneAndUpdate({ _id: user._id, 'questions.next': oldAnsweredQuestionNext }, { $set: { 'questions.$.next' : answeredQuestion.next } }, {new : true})
+  //     .then(result => { 
+  //       if (result) {
+  //         console.log('changing answeredNode: should be pointing to 4', result);
+  //         // res.json(result);
+  //       } else {
+  //         next();
+  //       }
+  //     })
+  //     .catch(err => {
+  //       if (err.code === 11000) {
+  //         err = new Error('You already have a folder with that name');
+  //         err.status = 400;
+  //       }
+  //       next(err);
+  //     });
+
+  // })
+  // .catch(err => {
+  //   next(err);
+  // });
 
 
 
 
 
   // not finished, need to have an M value
-  const questionToPost = req.body.question;
+  // const questionToPost = req.body.question;
   // linkedList.deleteFirst();
   // linkedList.insertLast(questionToPost);
   // posts the next one
-  res.send('posted');
+  // res.send('posted');
 });
 
 
