@@ -6,15 +6,6 @@ const LinkedList = require('../utils/LinkedList');
 const Router = express.Router();
 const seedQuestions = require('../db/seed/questions');
 
-function createLinkedList() {
-  // this only creates the new LinkedList from scratch, does not grab the local question data per user
-  const questionLinkedList = new LinkedList();
-  for (let i = 0; i < seedQuestions.length; i++) {
-    questionLinkedList.insertFirst(seedQuestions[i]);
-  }
-  return questionLinkedList;
-}
-
 Router.post('/', (req, res, next) => {
   const { firstName, lastName, username, password } = req.body;
 
@@ -84,7 +75,7 @@ Router.post('/', (req, res, next) => {
   if (lastName) {
     last = lastName.trim();
   }
-  const questions = createLinkedList();
+  const questions = seedQuestions;
   console.log(questions);
 
   return User.hashPassword(password)
