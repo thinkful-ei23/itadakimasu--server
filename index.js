@@ -10,7 +10,7 @@ const { dbConnect } = require('./db-mongoose');
 // const {dbConnect} = require('./db-knex');
 const localStrategy = require('./passport/local');
 const jwtStrategy = require('./passport/jwt');
-
+const progressRouter = require('./routes/progress');
 const authRouter = require('./routes/auth');
 const usersRouter = require('./routes/users');
 const questionsRouter = require('./routes/question');
@@ -38,6 +38,7 @@ app.use(express.json());
 app.use('/api/auth', authRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/question', questionsRouter);
+app.use('/api/progress', progressRouter);
 
 app.use((req, res, next) => {
   const err = new Error('Not Found');
