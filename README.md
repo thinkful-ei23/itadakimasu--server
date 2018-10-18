@@ -1,45 +1,42 @@
-# Thinkful Backend Template
+# Itadakimasu!
 
-A template for developing and deploying Node.js apps.
+## Introduction
+Food is the most important part of travel.
 
-## Getting started
+Why is that? Preparing ordering food at home is routine. It's expected. But hop on a plane, and suddenly, acquiring food is a challenge. If you don't know the magic words, you're out of luck. You resort to pointing wildly at the menu, unaware of what dish will reach your table.
 
-### Setting up a project
+If you're planning a trip to Japan, or want to learn Japanese, Itadakimasu will help you learn the names of common Japanese foods. Impress friends, waiters, and friends-who-are-also-waiters with your knowledge. Good luck, gourmand.
 
-* Move into your projects directory: `cd ~/YOUR_PROJECTS_DIRECTORY`
-* Clone this repository: `git clone https://github.com/Thinkful-Ed/backend-template YOUR_PROJECT_NAME`
-* Move into the project directory: `cd YOUR_PROJECT_NAME`
-* Install the dependencies: `npm install`
-* Create a new repo on GitHub: https://github.com/new
-    * Make sure the "Initialize this repository with a README" option is left unchecked
-* Update the remote to point to your GitHub repository: `git remote set-url origin https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME`
+## What is spaced repetition?
+Spaced repetition is a learning technique that has found mainstream success in a wide variety of learning applications. This technique is perfect for language learning, which requires students to learn a large number of items and retain them indefinitely in memory. As you encounter pieces of information more and more, the less often you need to refresh your memory of it. 
 
-### Working on the project
+## Start Learning
+Check out the application [here](https://polar-dawn-64935.herokuapp.com/).
 
-* Move into the project directory: `cd ~/YOUR_PROJECTS_DIRECTORY/YOUR_PROJECT_NAME`
-* Run the development task: `npm start`
-    * Starts a server running at http://localhost:8080
-    * Automatically restarts when any of your files change
+## Key Parts of Project
+The algorithm on the server side is implemented using a linked-list. (needs revision)
 
-## Databases
+The client side code for this project is [here](https://github.com/thinkful-ei23/itadakimasu-client).
 
-By default, the template is configured to connect to a MongoDB database using Mongoose.  It can be changed to connect to a PostgreSQL database using Knex by replacing any imports of `db-mongoose.js` with imports of `db-knex.js`, and uncommenting the Postgres `DATABASE_URL` lines in `config.js`.
+## Tech Stack
 
-## Deployment
+### MERN
+* MongoDB
+* Express.js
+* React
+* Node.js
 
-Requires the [Heroku CLI client](https://devcenter.heroku.com/articles/heroku-command-line).
+### Client-side dependencies
+* redux
+* redux-form
+* react-router
+* react-redux
 
-### Setting up the project on Heroku
+### Server-side dependencies
+* cors
+* passport
+* mongoose
+* jwt
 
-* Move into the project directory: `cd ~/YOUR_PROJECTS_DIRECTORY/YOUR_PROJECT_NAME`
-* Create the Heroku app: `heroku create PROJECT_NAME`
-
-* If your backend connects to a database, you need to configure the database URL:
-    * For a MongoDB database: `heroku config:set DATABASE_URL=mongodb://USERNAME:PASSWORD@HOST:PORT/DATABASE_NAME`
-    * For a PostgreSQL database: `heroku config:set DATABASE_URL=postgresql://USERNAME:PASSWORD@HOST:PORT/DATABASE_NAME`
-
-* If you are creating a full-stack app, you need to configure the client origin: `heroku config:set CLIENT_ORIGIN=https://www.YOUR_DEPLOYED_CLIENT.com`
-
-### Deploying to Heroku
-
-* Push your code to Heroku: `git push heroku master`
+## License
+[GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/)
