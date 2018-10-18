@@ -3,7 +3,7 @@
 ## Introduction
 Food is the most important part of travel.
 
-Why is that? Preparing ordering food at home is routine. It's expected. But hop on a plane, and suddenly, acquiring food is a challenge. If you don't know the magic words, you're out of luck. You resort to pointing wildly at the menu, unaware of what dish will reach your table.
+Why is that? Preparing and ordering food at home is routine. It's expected. But hop on a plane, and suddenly, acquiring food is a challenge. If you don't know the magic words, you're out of luck. You resort to pointing wildly at the menu, unaware of what dish will reach your table.
 
 If you're planning a trip to Japan, or want to learn Japanese, Itadakimasu will help you learn the names of common Japanese foods. Impress friends, waiters, and friends-who-are-also-waiters with your knowledge. Good luck, gourmand.
 
