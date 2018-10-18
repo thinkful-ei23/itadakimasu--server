@@ -15,7 +15,7 @@ router.get('/', jwtAuth, (req, res, next) => {
       if (user) {
         const questions = user.questions.map((question, index) => ({
           index,
-          answer: question.answer,
+          question: question.question,
           attempts: question.attempts,
           successes: question.successes
         }));
