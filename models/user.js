@@ -14,6 +14,8 @@ const userSchema = new mongoose.Schema({
       question: String,
       answer: String,
       memoryStr: Number,
+      attempts : Number,
+      successes : Number,
       next: Number
     }
   ],
