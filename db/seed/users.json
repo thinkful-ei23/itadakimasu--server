@@ -9,6 +9,7 @@
         {
           "_id": "111111111111111111111101",
           "imageURL" : "/img/tempura.jpg",
+          "imageDescription": "Plate of deep fried shrimp and veggies.",
           "question" : "天ぷら",
           "answer" : "tempura",
           "memoryStr" : 1,
@@ -17,6 +18,7 @@
         {
           "_id": "111111111111111111111102",
           "imageURL" : "/img/okonomiyaki.jpg",
+          "imageDescription": "Japanese style pancake made with flour, eggs, cabbage, and other ingredients.",
           "question" : "お好み焼き",
           "answer" : "okonomiyaki",
           "memoryStr" : 1,
@@ -25,6 +27,7 @@
         {
           "_id": "111111111111111111111103",
           "imageURL" : "/img/sashimi.jpg",
+          "imageDescription": "Thiny sliced raw fish, served with soy sauce and wasabi.",
           "question" : "刺身",
           "answer" : "sashimi",
           "memoryStr" : 1,
@@ -33,6 +36,7 @@
         {
           "_id": "111111111111111111111104",
           "imageURL": "/img/mochi.jpg",
+          "imageDescription": "Stack of Japanese rice cakes",
           "question": "餅",
           "answer": "mochi",
           "memoryStr" : 1,
@@ -41,6 +45,7 @@
         {
           "_id": "111111111111111111111105",
           "imageURL": "/img/ramen.jpg",
+          "imageDescription": "Chinese-style wheat noodles in hearty broth with veggies and meat.",
           "question": "ラーメン",
           "answer": "ramen",
           "memoryStr" : 1,
@@ -49,6 +54,7 @@
         {
           "_id": "111111111111111111111106",
           "imageURL": "/img/udon.jpg",
+          "imageDescription": "Bowl filled with a broth of thick, Japanese-style wheat flour noodle.",
           "question": "うどん",
           "answer": "udon",
           "memoryStr" : 1,
@@ -57,6 +63,7 @@
         {
           "_id": "111111111111111111111107",
           "imageURL": "/img/natto.jpg",
+          "imageDescription": "Two stalks filled with fermented soy beans.",
           "question": "納豆",
           "answer": "natto",
           "memoryStr" : 1,
@@ -65,6 +72,7 @@
         {
           "_id": "111111111111111111111108",
           "imageURL": "/img/soba.jpg",
+          "imageDescription": "Plate of Japanese-style buckwheat noodles.",
           "question": "そば",
           "answer": "soba",
           "memoryStr" : 1,
@@ -73,6 +81,7 @@
         {
           "_id": "111111111111111111111109",
           "imageURL": "/img/edamame.jpg",
+          "imageDescription": "Assortment of immature soy bean pods (green).",
           "question": "枝豆",
           "answer": "edamame",
           "memoryStr" : 1,
@@ -81,6 +90,7 @@
         {
           "_id": "111111111111111111111110",
           "imageURL": "/img/takoyaki.jpg",
+          "imageDescription": "Octopus balls topped with tempura flakes.",
           "question": "タコヤキ",
           "answer": "takoyaki",
           "memoryStr" : 1,
@@ -99,6 +109,7 @@
         {
           "_id": "111111111111111111111111",
           "imageURL" : "/img/tempura.jpg",
+          "imageDescription": "Plate of deep fried shrimp and veggies.",
           "question" : "天ぷら",
           "answer" : "tempura",
           "memoryStr" : 1,
@@ -107,6 +118,7 @@
         {
           "_id": "111111111111111111111112",
           "imageURL" : "/img/okonomiyaki.jpg",
+          "imageDescription": "Japanese style pancake made with flour, eggs, cabbage, and other ingredients.",
           "question" : "お好み焼き",
           "answer" : "okonomiyaki",
           "memoryStr" : 1,
@@ -115,6 +127,7 @@
         {
           "_id": "111111111111111111111113",
           "imageURL" : "/img/sashimi.jpg",
+          "imageDescription": "Thiny sliced raw fish, served with soy sauce and wasabi.",
           "question" : "刺身",
           "answer" : "sashimi",
           "memoryStr" : 1,
@@ -123,6 +136,7 @@
         {
           "_id": "111111111111111111111114",
           "imageURL": "/img/mochi.jpg",
+          "imageDescription": "Stack of Japanese rice cakes",
           "question": "餅",
           "answer": "mochi",
           "memoryStr" : 1,
@@ -131,6 +145,7 @@
         {
           "_id": "111111111111111111111115",
           "imageURL": "/img/ramen.jpg",
+          "imageDescription": "Chinese-style wheat noodles in hearty broth with veggies and meat.",
           "question": "ラーメン",
           "answer": "ramen",
           "memoryStr" : 1,
@@ -139,6 +154,7 @@
         {
           "_id": "111111111111111111111116",
           "imageURL": "/img/udon.jpg",
+          "imageDescription": "Bowl filled with a broth of thick, Japanese-style wheat flour noodle.",
           "question": "うどん",
           "answer": "udon",
           "memoryStr" : 1,
@@ -147,6 +163,7 @@
         {
           "_id": "111111111111111111111117",
           "imageURL": "/img/natto.jpg",
+          "imageDescription": "Two stalks filled with fermented soy beans.",
           "question": "納豆",
           "answer": "natto",
           "memoryStr" : 1,
@@ -155,6 +172,7 @@
         {
           "_id": "111111111111111111111118",
           "imageURL": "/img/soba.jpg",
+          "imageDescription": "Plate of Japanese-style buckwheat noodles.",
           "question": "そば",
           "answer": "soba",
           "memoryStr" : 1,
@@ -163,6 +181,7 @@
         {
           "_id": "111111111111111111111119",
           "imageURL": "/img/edamame.jpg",
+          "imageDescription": "Assortment of immature soy bean pods (green).",
           "question": "枝豆",
           "answer": "edamame",
           "memoryStr" : 1,
@@ -171,6 +190,7 @@
         {
           "_id": "111111111111111111111120",
           "imageURL": "/img/takoyaki.jpg",
+          "imageDescription": "Octopus balls topped with tempura flakes.",
           "question": "タコヤキ",
           "answer": "takoyaki",
           "memoryStr" : 1,
