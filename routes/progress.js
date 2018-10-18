@@ -13,7 +13,12 @@ router.get('/', jwtAuth, (req, res, next) => {
   User.findOne({_id: userId})
     .then(user => {
       if (user) {
-        const questions = user.questions;
+        const questions = user.questions.map((question, index) => ({
+          index,
+          answer: question.answer,
+          attempts: question.attempts,
+          successes: question.successes
+        }));
         console.log(questions);
         res.json(questions);
       }
