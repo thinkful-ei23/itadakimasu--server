@@ -48,7 +48,6 @@ app.use((req, res, next) => {
 
 app.use((err, req, res, next) => {
   if (err.status) {
-    console.log(err);
     const errBody = Object.assign({}, err, { message: err.message });
     res.status(err.status).json(errBody);
   } else {
