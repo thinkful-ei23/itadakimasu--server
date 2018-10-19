@@ -29,7 +29,6 @@ class LinkedList {
         tempNode = tempNode.next; 
       }
       if (tempNode.next === null) {
-        console.log('Item not found');
         return;
       }
       // a b
@@ -52,7 +51,6 @@ class LinkedList {
         afterNode = tempNode.next;
       }
       if (tempNode.next === null) {
-        console.log('Item not found');
         return;
       }
       // a b
@@ -73,7 +71,6 @@ class LinkedList {
         previousNode = tempNode; 
         tempNode = tempNode.next; 
       }
-      console.log(previousNode);
       previousNode.next = new _Node(value, tempNode);
     }
   }
@@ -157,7 +154,6 @@ class LinkedList {
         tempNode = tempNode.next; 
       }
       if(tempNode === null){
-        console.log('Item not found');
         return;
       }
       previousNode.next = tempNode.next;
@@ -175,7 +171,7 @@ class LinkedList {
 // }
 
 // const questionLinkedList = createLinkedList();
-// console.log(questionLinkedList);
+//  (questionLinkedList);
 
 // module.exports = questionLinkedList;
 module.exports = LinkedList;

@@ -19,7 +19,6 @@ router.get('/', jwtAuth, (req, res, next) => {
           attempts: question.attempts,
           successes: question.successes
         }));
-        console.log(questions);
         res.json(questions);
       }
       else {
