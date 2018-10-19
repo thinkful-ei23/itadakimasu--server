@@ -10,6 +10,7 @@ const userSchema = new mongoose.Schema({
   questions: [
     {
       _id: mongoose.Schema.Types.ObjectId,
+      imageDescription: String,
       imageURL: String,
       question: String,
       answer: String,
