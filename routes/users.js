@@ -88,17 +88,14 @@ Router.post('/', (req, res, next) => {
       return User.create(newUser);
     })
     .then(user => {
-      console.log(user);
       return res.status(201).location(`/api/users/${user.id}`).json(user);
     })
     .catch(err => {
-      console.log(err);
       if (err.code === 11000) {
         err = new Error('The username already exists');
         err.status = 400;
         err.reason = 'ValidationError';
       }
-      console.log(err);
       next(err);
     });
 });
