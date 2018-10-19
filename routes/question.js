@@ -88,57 +88,6 @@ router.post('/', jwtAuth, (req, res, next) => {
       next(err);
     });
 
-  //   User.findOneAndUpdate({ _id: user._id, 'questions.next': newAnsweredNodeNext },{ $set: { 'questions.$.next' : currentHeadIndex } }, {new : true})
-  //     .then(result => {
-  //       if (result) {
-  //         console.log('changing currentNode: should be pointing to 0', result);
-  //         // res.json(result);
-  //       } else {
-  //         next();
-  //       }
-  //     })
-  //     .catch(err => {
-  //       if (err.code === 11000) {
-  //         err = new Error('You already have a folder with that name');
-  //         err.status = 400;
-  //       }
-  //       next(err);
-  //     });
-
-  //   // need to change the answeredNode's next to equal
-  //   console.log('searchning for the index that equals', oldAnsweredQuestionNext);
-  //   User.findOneAndUpdate({ _id: user._id, 'questions.next': oldAnsweredQuestionNext }, { $set: { 'questions.$.next' : answeredQuestion.next } }, {new : true})
-  //     .then(result => { 
-  //       if (result) {
-  //         console.log('changing answeredNode: should be pointing to 4', result);
-  //         // res.json(result);
-  //       } else {
-  //         next();
-  //       }
-  //     })
-  //     .catch(err => {
-  //       if (err.code === 11000) {
-  //         err = new Error('You already have a folder with that name');
-  //         err.status = 400;
-  //       }
-  //       next(err);
-  //     });
-
-  // })
-  // .catch(err => {
-  //   next(err);
-  // });
-
-
-
-
-
-  // not finished, need to have an M value
-  // const questionToPost = req.body.question;
-  // linkedList.deleteFirst();
-  // linkedList.insertLast(questionToPost);
-  // posts the next one
-  // res.send('posted');
 });
 
 
